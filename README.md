@@ -1,6 +1,5 @@
 # Syllable Steganography
 Encode hidden messages in plain text, by counting the syllables.
----
 
 ## 📋Terms
 ### Word Group Size (W)
