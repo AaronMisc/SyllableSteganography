@@ -131,20 +131,20 @@ shop-ping 2
 To make a key, use the CSV. For easier editing, open in a spreadsheet editor.
 
 This key uses English letter frequency to prevent commonly used letters from being guessed.
-**Here is an example of a key in CSV format:**
-e;0 (This means that e is decoded as 0)
-t;1
-a;2
-o;3
-i;4
-n;5
-s;6
-h;7
-r;8
-dl;9 (There can be multiple letters per id)
-cu;10
-mw;11
-fg;12
-ypb;13
-vkj;14 
+**Here is an example of a key in CSV format:**  
+e;0 (This means that e is decoded as 0)  
+t;1  
+a;2  
+o;3  
+i;4  
+n;5  
+s;6  
+h;7  
+r;8  
+dl;9 (There can be multiple letters per id)  
+cu;10  
+mw;11  
+fg;12  
+ypb;13  
+vkj;14  
 xqz;15 (Has 16 items, because syllables are grouped into 4s, so there will be 2^4=16 possibilities)
