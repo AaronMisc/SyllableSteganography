@@ -149,3 +149,12 @@ fg;12
 ypb;13
 vkj;14 
 xqz;15 (Has 16 items, because syllables are grouped into 4s, so there will be 2^4=16 possibilities)
+
+## License
+This project is licensed under the GNU General Public License v3.0 (GPLv3).
+
+The following dependencies are included in this project:
+	Pyphen (licensed under GPL 2.0+, LGPL 2.1+, MPL 1.1)
+	Dictionaries included with Pyphen (licensed under GPL 2.0+, LGPL 2.1+ and/or MPL 1.1)
+
+See the [LICENSE](./LICENSE) file for more information on the licenses.
