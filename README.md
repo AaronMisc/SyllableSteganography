@@ -36,14 +36,14 @@ However, it means more words have to be used to encode a secret message.
 </details>
 
 ### Key
-Something that maps characters to numbers (IDs). Example: See below.
+Something that maps characters to numbers (IDs). Example: [See below](#keys).
 Multiple characters can map to one ID. Example: abc -> 12.
 **Warning**: To use the encoder, there can't be multiple IDs that map to the same character. 12 -> b and 5 -> b would be invalid. This is valid for manual encoding.
 
 ## 🔒Encoding
 Example message: HI
 1. Pick a word group size (W) and binary group size (B). Example: W = 4. B = 4.
-2. Make a key with 2^B IDs. Example: 16 IDs. See the one shown below.
+2. Make a key with 2^B IDs. Example: 16 IDs. [See below](#keys).
 3. Encode your message using that key. For each letter, get the number for it using the key. Example: 74.
 4. Convert the numbers to binary with B places. Example: 0111, 0100.
 5. Go through each of the numbers. Make a word group with size W for each.
@@ -77,7 +77,7 @@ shop-ping 2
 	<summary><strong>Manually</strong></summary>
 	<ol>
 		<li>Get the word group size (<strong>W</strong>), the binary group size (<strong>B</strong>), and the key.
-			<p>Example: W = 4, B = 4. The key is provided below.</p>
+			<p>Example: W = 4, B = 4. Key: See "Keys" below.</p>
 		</li>
 		<li>Group the words into groups of size <strong>W</strong>.
 			<p>Example: (Today I went shopping) (at the local store.)</p>
