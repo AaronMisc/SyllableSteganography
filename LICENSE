@@ -1,0 +1,27 @@
+SyllableSteganography
+
+This project is licensed under the GNU General Public License v3.0 (GPL-3.0).
+
+You can freely copy, modify, and distribute this project under the terms of the GPL-3.0. 
+Please see the full text of the GPL-3.0 at: https://www.gnu.org/licenses/gpl-3.0.html.
+For the GPL-3.0 License, please see [LICENSE.GPL](LICENSE.GPL).
+
+---
+
+Third Party Licenses:
+
+These files include the licenses of the dependencies used in this project.
+For the GPL-2.0 License, please see [COPYING.GPL](./third-party/pyphen/COPYING.GPL).
+For the LGPL-2.1 License, please see [COPYING.LGPL](./third-party/pyphen/COPYING.LGPL).
+For the MPL-1.1 License, please see [COPYING.MPL](./third-party/pyphen/COPYING.MPL).
+
+Dependencies:
+
+1. **Pyphen**
+    - Pyphen is released under a tri-license: GPL 2.0+, LGPL 2.1+, MPL 1.1.
+
+2. **Dictionaries included with Pyphen**
+   - These dictionaries are sourced from LibreOffice's Git repository and are also distributed under the GPL, LGPL, and/or MPL licenses.
+   - LibreOffice's Git repository: https://git.libreoffice.org/dictionaries
+
+For other dependencies, please refer to their respective documentation or LICENSE files.
