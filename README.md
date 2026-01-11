@@ -156,4 +156,4 @@ The following dependencies are included in this project:
 	Pyphen (licensed under GPL 2.0+, LGPL 2.1+, MPL 1.1)
 	Dictionaries included with Pyphen (licensed under GPL 2.0+, LGPL 2.1+ and/or MPL 1.1)
 
-See the [LICENSE](./LICENSE) file for more information on the licenses.
+See the [LICENSE](./LICENSE.md) file for more information on the licenses.
