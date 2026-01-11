@@ -22,10 +22,7 @@ import re
 import csv
 from typing import Callable
 
-
 # CONFIGURATION
-
-
 LANGUAGE = "en_US"
 
 CSV_DELIMITER = ";"
@@ -36,19 +33,13 @@ SHOW_SYLLABLES = True
 SYLLABLE_GROUP_SIZE = 4
 BINARY_GROUP_SIZE = 4
 
-CHARACTERS_TO_ID_PATH = "characters_to_id.csv"
-SYLLABLE_OVERRIDE_PATH = "syllable_overrides.csv"
-
+CHARACTERS_TO_ID_PATH = "data/characters_to_id.csv"
+SYLLABLE_OVERRIDE_PATH = "data/syllable_overrides.csv"
 
 # INITIALIZATION
-
-
 PYPHEN_DICTIONARY = pyphen.Pyphen(lang=LANGUAGE)
 
-
 # CSV UTILITIES
-
-
 def convert_csv_to_dict(
     file_path: str,
     reverse: bool = False,
@@ -72,7 +63,6 @@ def convert_csv_to_dict(
 
     return output
 
-
 def load_syllable_overrides(file_path: str) -> dict[str, int]:
     overrides = {}
 
@@ -93,10 +83,7 @@ def load_syllable_overrides(file_path: str) -> dict[str, int]:
 
     return overrides
 
-
 # TEXT UTILITIES
-
-
 def split_dict_key_strings(dictionary: dict, split_by: str = "") -> dict:
     output = {}
 
@@ -107,14 +94,10 @@ def split_dict_key_strings(dictionary: dict, split_by: str = "") -> dict:
 
     return output
 
-
 def remove_non_letter_characters(string: str) -> str:
     return re.sub(r"[^a-zA-Z']", "", string).lower()
 
-
 # SYLLABLE LOGIC
-
-
 def count_syllables(word: str) -> int:
     word = remove_non_letter_characters(word)
     if not word:
@@ -135,17 +118,12 @@ def count_syllables(word: str) -> int:
 
     return syllables
 
-
 def syllables_from_string(string: str) -> list[int]:
     return [count_syllables(word) for word in string.split()]
 
-
 # BIT CONVERSION
-
-
 def odd_even_converter(n: int) -> int:
     return 0 if n % 2 == 0 else 1
-
 
 def convert_syllable_group(
     syllables: list[int],
@@ -160,7 +138,6 @@ def convert_syllable_group(
 
     return output
 
-
 def convert_listed_binary_to_integers(listed_binary: list[int]) -> list[int]:
     output = []
 
@@ -172,21 +149,14 @@ def convert_listed_binary_to_integers(listed_binary: list[int]) -> list[int]:
 
     return output
 
-
 # DICTIONARY ENCODING
-
-
 def encode_string_with_dictionary(string: str, dictionary: dict[str, int]) -> list[int]:
     return [dictionary[char] for char in string]
-
 
 def decode_ids_with_dictionary(ids: list[int], dictionary: dict[int, str]) -> list[str]:
     return [dictionary[_id] for _id in ids]
 
-
 # STEGANOGRAPHY PIPELINE
-
-
 def steganography_decode_string(string: str, decode_dictionary: dict[int, str]) -> list[str]:
     syllables = syllables_from_string(string)
     bits = convert_syllable_group(syllables)
@@ -195,18 +165,11 @@ def steganography_decode_string(string: str, decode_dictionary: dict[int, str]) 
 
 
 # LOAD DATA
+CHARACTERS_TO_ID = split_dict_key_strings(convert_csv_to_dict(CHARACTERS_TO_ID_PATH, second_type=int))
 
-
-CHARACTERS_TO_ID = split_dict_key_strings(
-    convert_csv_to_dict(CHARACTERS_TO_ID_PATH, second_type=int)
-)
-
-ID_TO_CHARACTERS = convert_csv_to_dict(
-    CHARACTERS_TO_ID_PATH, reverse=True, first_type=int
-)
+ID_TO_CHARACTERS = convert_csv_to_dict(CHARACTERS_TO_ID_PATH, reverse=True, first_type=int)
 
 SYLLABLE_OVERRIDES = load_syllable_overrides(SYLLABLE_OVERRIDE_PATH)
-
 
 if __name__ == "__main__":
     string = """Today I went shopping at the local store. I started acting strangely which was kinda dumb. I ate some food from the pyrotechnics store and now I'm stuffed. It was real fun."""

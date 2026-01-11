@@ -53,7 +53,8 @@ Example message: HI
 
 ## 🔐Decoding
 ### Code
-1. Put the encoding key into the characters to csv file (characters_to_id.csv).
+Open [syllable_steganography.py](syllable_steganography.py)
+1. Put the encoding key into the characters to csv file ([data/characters_to_id.csv](data/characters_to_id.csv)).
 2. Change the constants at the beginning of the code (under configuration) to change global settings.
 3. Paste the secret message into string.
 ```python
@@ -71,7 +72,11 @@ went 1
 shop-ping 2
 ...
 ```
-4. If there are, go to the syllable overrides csv file (syllable_overrides.csv) and add a line with this format: word;syllables.
+4. If there are, go to the syllable overrides csv file ([data/syllable_overrides.csv](data/syllable_overrides.csv)) and add a line with this format: 
+
+```csv
+word;syllables
+```
 
 <details>
 	<summary><strong>Manually</strong></summary>
